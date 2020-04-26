@@ -1,0 +1,9 @@
+We do not have to publish our library to npm in order to use/test it. Once we have done the build (ng build NgxMatTypeahead), we can import it into our app. Basically, like any other 3rd party library we need to add it as a dependency in our app’s NgModule as shown below. There are a few points to note about how this import works.
+
+
+Note that NgxMatTypeahead library is still not published and hence not available via npm and in node_modules.
+
+Let’s pause and think as what updates were made in the app when we had generated the library(ng g library NgxMatTypeahead -p NgxMat). There were few changes and one of the changes was in tsconfig.json file. Angular had added paths property into this file as shown below:
+
+The Angular CLI uses the tsconfig paths to tell the build system where to find the library. More on this here.
+So, when you are importing NgxMatTypeaheadModule , it is actually being imported from dist/ngx-mat-typeahead.
